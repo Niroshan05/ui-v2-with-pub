@@ -1,5 +1,18 @@
 .App {
+  position: absolute;
   text-align: center;
+  top:0px;
+  right: 0px;
+  left :0px;
+  bottom: 0px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat:repeat-y;
+  background-position: 50% 50%;
+  
+  overflow-x: hidden;
+  background-image:url("../public/img/pexels-madison-inouye-1831234.jpg");
+  /* background-image: '../img/Chrysanthemum.jpg'; */
 }
 
 .App-logo {
@@ -12,22 +25,47 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.form-group{ margin-right: 20px;}
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+padding-top: 1%;
+
   align-items: center;
+  
+ text-align: left;
+  
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display:flex;
+  color: rgb(0, 0, 0);
 }
 
+label {
+  display: inline-block;
+  width: 150px;
+}
 .App-link {
   color: #61dafb;
 }
-
+.spacer{
+  margin-bottom: 10px;
+  
+}
+.BorderMaker{
+  border: 1;
+  border-color: black;
+  
+}
+.center{
+  padding: top 10px; ;
+  /* align-items: center;
+  text-align: left;
+ justify-content: center; */
+  margin-left:15%;
+  margin-right:15%;
+  display:grid;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +73,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.alignleft{
+  text-align: left;
+}
+
+.errpage{
+  padding-top: 10%;
 }

@@ -1,24 +1,105 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import Navbar from 'react-bootstrap/Navbar';
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
+import ShowAllEmp from './Employee/ShowAllEmp';
+import SearchbyId from './Employee/SearchbyId';
+import CreateEmp from './Employee/CreateEmp';
+import EditEmp from './Employee/EditEmp';
+import DeleteEmp from './Employee/DeleteEmp';
+import Login from './Employee/Login';
+import EmployeeDashboard from './Employee/EmployeeDashboard';
+
+import ShowAllLeave from './LeaveManagement/ShowAllLeave';
+import AddLeave from './LeaveManagement/AddLeave';
+import ShowSpecificLeave from './LeaveManagement/ShowSpecificLeave';
+import ApproveDeny from './LeaveManagement/ApproveDeny';
+
+import SearchByIdMan from './Manager/SearchByIdMan';
+import AddManager from './Manager/AddManager';
+
+import ErrorPage from './ErrorPage';
+import Test from './LeaveManagement/test';
+
+
+
+ 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div >
+     <BrowserRouter> 
+    <div className="App"> 
+    <Navbar bg="dark" variant="dark">
+        <nav className="me-auto">
+              <div className="collapse navbar-collapse">
+                <Link className="navbar-brand" to={'/Login'}>
+                     LMS 
+                </Link>
+                
+                <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                   <ul className="navbar-nav ml-auto">
+                   <li className="nav-item">
+                      <Link className="nav-link" to={'/EmployeeDashBoard'}>
+                        DashBoard
+                      </Link>
+                    </li>
+                   <li className="nav-item">
+                      <Link className="nav-link" to={'/CreateEmp'}>
+                       Register
+                      </Link>
+                    </li> 
+                    <li className="nav-item">
+                      <Link className="nav-link" to={'/Login'}>
+                       Login
+                      </Link>
+                    </li> 
+
+                    {/* test */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to={'/test'}>
+                       Contact Us
+                      </Link>
+                    </li>
+                   
+                   
+                      
+                  </ul>  
+                
+                </div>
+              </div>
+              
+            </nav>
+             </Navbar>
+      <Routes>
+        
+        <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
+        <Route path="/" element={<Login/>}></Route>
+        <Route path="/Login" element={<Login/>}></Route>
+        <Route path="/ShowAllEmp" element={<ShowAllEmp/>}></Route>
+        <Route path="/SearchbyId" element={<SearchbyId/>}></Route>
+        <Route path="/CreateEmp" element={<CreateEmp/>}></Route>
+        <Route path="/EditEmp" element={<EditEmp/>}></Route>
+        <Route path="/DeleteEmp" element={<DeleteEmp/>}></Route>
+        <Route path="/EmployeeDashboard" element={<EmployeeDashboard/>}></Route>
+        <Route path="/AllLeave" element={<ShowAllLeave/>}></Route>
+        <Route path="/AddLeave" element={<AddLeave/>}></Route>
+        <Route path="/SpecificLeave" element={<ShowSpecificLeave/>}></Route>
+        <Route path="/SearchByIdMan" element={<SearchByIdMan></SearchByIdMan>}></Route>
+        <Route path="/ApproveDeny" element={<ApproveDeny></ApproveDeny>}></Route>
+        <Route path="/test" element={<Test></Test>}></Route>
+        <Route path="/AddManager" element={<AddManager></AddManager>}></Route>
+        
+        
+        
+    
+     
+      </Routes>
     </div>
+    </BrowserRouter> 
+    </div> 
+    </>
   );
 }
 
